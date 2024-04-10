@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>Frontend Mentor | Stats preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        /* COLORS */
+        --very-dark-blue: hsl(233, 47%, 7%); /* (main background) */
+        --dark-desaturated-blue: hsl(244, 38%, 16%); /* (card background) */
+        --soft-violet: hsl(277, 64%, 61%); /* (accent) */
+        --slightly-transparent-white: hsla(0, 0%, 100%, 0.75); /* (main paragraph) */
+        --slightly-transparent-white2: hsla(0, 0%, 100%, 0.6); /* (stat headings) */
+
+        /* FONTS */
+        --lexend-deca: "Lexend Deca", sans-serif;
+        --inter: "Inter", sans-serif;
+      }
+
+      body {
+        background-color: var(--very-dark-blue);
+      }
+
+      .main-sect {
+        background-color: var(--dark-desaturated-blue);
+        display: flex;
+        color: #fff;
+        width: 80%;
+        height: 28rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: .5rem;
+      }
+
+      .info {
+        padding: 4rem;
+      }
+
+      .info > h1 {
+        font-family: var(--inter);
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .info > p {
+        font-family: var(--inter);
+        font-size: 1.2rem;
+        color: var(--slightly-transparent-white);
+        margin-bottom: 3rem;
+        line-height: 1.9rem;
+      }
+
+      .span{
+        color: var(--soft-violet);
+      }
+
+      .stats {
+        display: flex;
+        justify-content: space-between;
+        max-width: 26rem;
+      }
+
+      .quanty-stats>h2 {
+        font-family: var(--inter);
+        margin-bottom: .5rem;
+      }
+
+      .quanty-stats>h3 {
+        font-family: var(--lexend-deca);
+        font-size: .9rem;
+        font-weight: 300;
+        color: var(--slightly-transparent-white2);
+      }
+
+      .image-container {
+        background-image: url(images/image-header-desktop.jpg);
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        margin-left: 3rem;
+      }
+
+      .image-color {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #6d229c;
+        opacity: .5;
+      }
+
+      .image-color, .image-container {
+        border-radius: 0 .5rem .5rem 0;
+      }
+
+      .attribution {
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 4rem;
+        color: #fff;
+        font-family: var(--inter);
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      @media screen and (max-width: 400px) {
+        body {
+          padding: 3rem 1rem;
+        }
+
+        .main-sect {
+          flex-direction: column-reverse;
+          height: 50rem;
+          text-align: center;
+          position: static;
+          transform: none;
+          width: 100%;
+        }
+
+        .info {
+          padding: 2rem;
+        }
+
+        .info h1 {
+          font-size: 1.8rem;
+        }
+
+        .info p {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+
+        .stats {
+          flex-direction: column;
+          width: auto;
+          height: 13rem;
+          justify-content: space-between;
+        }
+
+        .image-container {
+          background-image: url(images/image-header-mobile.jpg);
+          margin: 0;
+        }
+
+        .image-container, .image-color{
+          border-radius: .5rem .5rem 0 0;
+        }
+
+        .attribution {
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Article -->
+    <article class="main-sect">
+      <!-- Information -->
+      <div class="info">
+        <h1>Get <span class="span">insights</span> that help your business grow.</h1>
+        <p>
+          Discover the benefits of data analytics and make better decisions
+          regarding revenue, customer experience, and overall efficiency.
+        </p>
+
+        <!-- Statistics-->
+        <div class="stats">
+          <div class="quanty-stats">
+            <h2>10k+</h2>
+            <h3>COMPANIES</h3>
+          </div>
+          <div class="quanty-stats">
+            <h2>314</h2>
+            <h3>TEMPLATES</h3>
+          </div>
+          <div class="quanty-stats">
+            <h2>12M+</h2>
+            <h3>QUERIES</h3>
+          </div>
+        </div>
+      </div>
+      <div class="image-container">
+        <div class="image-color"></div>
+      </div>
+    </article>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Angel Henriquez</a>.
+    </div>
+  </body>
+</html>
